@@ -1,5 +1,12 @@
 FROM node:12-alpine
 
-ENV customVar='Nice Job!'
+WORKDIR /usr/app
 
-CMD ["node", "--version"]
+COPY package*.json ./
+RUN npm install
+
+COPY . .
+
+EXPOSE 7500
+
+CMD ["npm", "start"]
