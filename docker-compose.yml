@@ -1,0 +1,10 @@
+version: "3"
+
+services: 
+  app:
+    build: .
+    command: npm start
+    ports:
+      - "7500:7500"
+    volumes:
+      - .:/usr/app
